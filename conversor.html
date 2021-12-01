@@ -7,18 +7,22 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    
+    <link rel="shortcut icon" href="favicon.png">
     <link rel="stylesheet" href="custom.css">
-    <title>Converrsor de Maiúsculas e Minúsculas</title>
+    <title>Conversor de Maiúsculas e Minúsculas</title>
   </head>
-  <body>
+  <body class="bg-success p-2 text-dark bg-opacity-25">
     <div class="container-sm">
-    <h1>Converrsor de Maiúsculas e Minúsculas</h1>
-    <textarea class="form-control" id="texto" rows="3"></textarea><br>
+    <h1 class="text-center fw-light">Conversor de Maiúsculas e Minúsculas</h1>
+    <textarea class="form-control" id="texto" rows="5" placeholder="Deixe aqui o seu texto a ser convertido"></textarea><br>
     <input type="button" class="btn btn-success mb-3"  onclick="maiuscula()" value="MAIUSCULA" id="maiuscAlertBtn">
     <input type="button" class="btn btn-info mb-3" onclick="minuscula()" value="minuscula" id="minuscAlertBtn">
-   
-    <p id="resultado" class="p-2 rounded-3"></p> 
+    
+    <div id="area-result" class="hidden">
+    <input type="button" class="bg-transparent link-primary btn btn-info mb-3" id="copy" onclick="copyText()" value="Copiar">
+
+    <textarea id="resultado" class="form-control p-2 rounded-3" rows="5" readonly></textarea>
+    </div>
     <div id="liveAlertPlaceholder"></div>  
     </div>
     <script src="conversor.js"></script>
@@ -26,6 +30,6 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
+ 
   </body>
 </html>

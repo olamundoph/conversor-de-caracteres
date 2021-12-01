@@ -1,5 +1,6 @@
 var t = document.getElementById('texto')
 var r = document.getElementById('resultado')
+var ar= document.getElementById('area-result')
 
 var alertPlaceholder = document.getElementById('liveAlertPlaceholder')
 var alertMaiusc = document.getElementById('maiuscAlertBtn')
@@ -18,11 +19,13 @@ if (alertMaiusc) {
     if(t.value.length == 0){
     alert('Digite um texto...', 'danger')
     r.classList.remove('border', 'border-primary')
-    r.innerText = ""
+    ar.classList.add('hidden')
+    r.value = ""
     }
     else {
-    r.innerText = t.value.toUpperCase()
+    r.value = t.value.toUpperCase()
     alert('Seu texto foi convertido para letras maiúsculas!', 'success')
+    ar.classList.remove('hidden')
     r.classList.add('border', 'border-primary')
     }
   })
@@ -30,16 +33,25 @@ if (alertMaiusc) {
 if (alertMinusc) {
     alertMinusc.addEventListener('click', function () {
    
-    if(t.value.length == 0){
+    if(t.value.length == 0){  
     alert('Digite um texto...', 'danger')
     r.classList.remove('border', 'border-primary')
-    r.innerText = ""
+    ar.classList.add('hidden')
+    r.value = ""
     }
     else {
-    r.innerText = t.value.toUpperCase() 
+    r.value = t.value.toUpperCase() 
     alert('Seu texto foi convertido para letras minúsculas!', 'info')
+    ar.classList.remove('hidden')
     r.classList.add('border', 'border-primary')
     }
     })
   }
 
+  function copyText() {
+    r.value
+    r.select()
+    r.setSelectionRange(0, 99999)
+    document.execCommand('copy')
+    alert('Texto copiado!', 'success')
+  }
