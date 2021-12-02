@@ -51,7 +51,7 @@ if (alertMinusc) {
   function copyText() {
     r.value
     r.select()
-    r.setSelectionRange(0, 99999)
+    r.setSelectionRange(0, r.value.length)
     document.execCommand('copy')
     alert('Texto copiado!', 'success')
   }
