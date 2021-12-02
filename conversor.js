@@ -40,7 +40,7 @@ if (alertMinusc) {
     r.value = ""
     }
     else {
-    r.value = t.value.toUpperCase() 
+    r.value = t.value.toLowerCase() 
     alert('Seu texto foi convertido para letras minúsculas!', 'info')
     ar.classList.remove('hidden')
     r.classList.add('border', 'border-primary')
