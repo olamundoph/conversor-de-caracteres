@@ -53,5 +53,5 @@ if (alertMinusc) {
     r.select()
     r.setSelectionRange(0, r.value.length)
     document.execCommand('copy')
-    alert('Texto copiado!', 'success')
+    alert('Texto copiado!', 'warning')
   }
